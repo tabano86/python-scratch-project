@@ -14,5 +14,4 @@ for character in characters_to_add:
     character_set.add(character.strip().upper())
 
 print(f"Here is your updated list with [{len(characters_to_add)}] newly added characters:")
-for c in reversed(character_set):
-    print(c)
+print(*character_set, sep=", ")
