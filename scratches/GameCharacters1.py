@@ -1,19 +1,15 @@
 # Initial list of game characters
-list = ["Megan Man", "Kirby", "Sonic", "Tails"]
-org_list_len = len(list)  # holding original list length
+
+master_characters: list[str] = ["Megan Man", "Kirby", "Sonic", "Tails"]
 
 # Displays descending list for user
-print(f"There are currently {org_list_len} characters on the list:")
-for list_view in list:
-    print(list_view)
+print("There are currently {} characters on the list:".format(len(master_characters)))
+print(*master_characters, sep=", ")
 
-# Newer block to streamline user prompt input
-prompt = input("Add some more characters to the list!\n")
-prompt_list = prompt.split()
-list = list + prompt_list
+# # Newer block to streamline user prompt input
+characters_to_add = input("Characters to add (separated by comma): ").split(",")
 
-# Displays updated descending list for user
-list_sum = len(list)
-print(f"Here is your updated list with {list_sum - org_list_len} new added characters:")
-for list_view in list:
-    print(list_view)
+master_characters = master_characters + list(map(lambda x: x.strip(), characters_to_add))
+
+print(f"Here is your updated list with [{len(characters_to_add)}] newly added characters:")
+print(*master_characters, sep=", ")
