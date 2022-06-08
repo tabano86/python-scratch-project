@@ -12,4 +12,4 @@ characters_to_add = input("Characters to add (separated by comma): ").split(",")
 master_characters = master_characters + list(map(lambda x: x.strip(), characters_to_add))
 
 print(f"Here is your updated list with [{len(characters_to_add)}] newly added characters:")
-print(*master_characters, sep=", ")
+print(*(sorted(master_characters, reverse=True)), sep=", ")
