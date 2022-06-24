@@ -3,6 +3,7 @@ from typing import List
 
 from Whisky import Whisky, FieldName
 
+
 whiskies: list[Whisky] = []
 
 with open("data.csv", 'r') as file:
@@ -27,3 +28,4 @@ for i in range(0, 10):
     elif x == "rating": val = whiskies[i].rating
     elif x == "country": val = whiskies[i].country
     print(val)
+
